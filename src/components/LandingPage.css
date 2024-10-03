@@ -1,0 +1,51 @@
+/* src/components/LandingPage.css */
+
+.landing-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+.image-section {
+  flex: 1; /* Takes up half of the container */
+  background-image: url('../assets/stlogin.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+}
+
+.options-section {
+  flex: 1; /* Takes up the other half of the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+.options-section h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-button {
+  display: block;
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+

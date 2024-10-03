@@ -1,0 +1,52 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar ul li {
+    display: inline;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .header-section {
+    padding: 50px;
+    background-color: #f8f9fa;
+  }
+  
+  .header-section h2 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .content-section {
+    padding: 40px;
+  }
+  
+  .footer-section {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
