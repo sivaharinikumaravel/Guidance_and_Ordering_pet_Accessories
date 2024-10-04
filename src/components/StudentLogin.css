@@ -1,3 +1,5 @@
+/* StudentLogin.css */
+
 /* Center the login container */
 .login-container {
   max-width: 400px;
@@ -6,6 +8,7 @@
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Position the container relative to its normal position */
 }
 
 /* Style the form labels */
@@ -51,7 +54,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('../assets/stlogin.jpg');
+  background-image: url('../assets/pe.jpg'); /* Adjust the path as necessary */
   background-size: cover;
   background-position: center;
+}
+
+/* Add a z-index to ensure the login container is always visible on top of the background */
+.login-container {
+  z-index: 1;
 }

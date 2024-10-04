@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../api'; // Assume you have an API function to register the user
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
 import '../components/StudentSignup.css';
 
 const StudentSignup = () => {
@@ -11,18 +11,29 @@ const StudentSignup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if passwords match before submitting
     if (password !== confirmPassword) {
-      alert('Passwords do not match!');
+      alert("Passwords do not match!"); // Alert if passwords don't match
       return;
     }
-    
+
     try {
-      const response = await registerUser({ email, password }); // Send data to backend
-      console.log('User registered:', response.data);
-      navigate('/home'); // Redirect to Home page on success
-    } catch (error) {
-      console.error('Registration error:', error);
-      alert('Registration failed! Please try again.');
+      // API call for signup
+      const response = await axios.post("http://localhost:5000/api/users/register", {
+        email,
+        password,
+      });
+
+      // If signup is successful, redirect to the login page
+      if (response.status === 200) {
+        alert("Signup successful! Please login."); // Display success message
+        navigate('/student-login'); // Redirect to login page
+      }
+
+    } catch (err) {
+      console.error("Signup error: ", err);
+      alert("Signup failed. Please try again."); // Display error message
     }
   };
 
@@ -59,6 +70,10 @@ const StudentSignup = () => {
         </div>
         <button type="submit">Sign Up</button>
       </form>
+      
+      <p className="login-link">
+        Already have an account? <Link to="/student-login">Login here</Link>
+      </p>
     </div>
   );
 };

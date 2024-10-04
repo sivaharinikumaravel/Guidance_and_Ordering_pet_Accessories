@@ -2,13 +2,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+const cors = require('cors')
 // Initialize the Express app
 const app = express();
 
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
-
+app.use(cors())
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/alumni_portal', {
   useNewUrlParser: true,
@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/alumni_portal', {
 
 // Define a User model (Example schema)
 const UserSchema = new mongoose.Schema({
-  name: String,
+
   email: String,
   password: String,
 });
